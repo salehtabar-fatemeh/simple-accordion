@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple accordion</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-    <div class="simple-accordion row">
-        <di class="col-4"></div>
+    <style>
+      div.simple1,
+      div.simple2 {
+        height: 50px;
+        background-color: green;
+        border: 2px solid red;
+        border-radius: 10px;
+      }
+      div.sibling-simple1,div.sibling-simple2{
+        height: 200px;
+        border: 1px solid blue;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="simple-accordion ms-5 mt-5">
+      <div class="simple1 col-4">simple1</div>
+      <div class="sibling-simple1 col-4">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam officia
+        quas iste sapiente saepe perferendis quam at fugit inventore, molestiae
+        dolores quasi incidunt omnis. Beatae vero veritatis dicta hic doloribus?
+      </div>
+      <div class="simple2 col-4">simple2</div>
+      <div class="sibling-simple2 col-4">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam officia
+        quas iste sapiente saepe perferendis quam at fugit inventore, molestiae
+        dolores quasi incidunt omnis. Beatae vero veritatis dicta hic doloribus?
+      </div>
     </div>
 
-
-
-    <script>
-
-    </script>
-    
-</body>
+    <script></script>
+  </body>
 </html>
