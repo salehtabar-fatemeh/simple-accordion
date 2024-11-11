@@ -14,9 +14,16 @@
         border-radius: 10px;
       }
       div.accordionbtn-sibling{
-        height: 200px;
+        height: 0px;
         border: 1px solid blue;
         border-radius: 10px;
+        overflow: hidden;
+        transition-property: height;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+      .accordionbtn-sibling.active{
+        height: 200px;
       }
     </style>
   </head>
@@ -38,7 +45,17 @@
 
     <script>
         const simpleAccordion = document.querySelector(".simple-accordion");
-        const accordionBtn = simpleAccordion.querySelector(".")
+        const accordionBtns = simpleAccordion.querySelectorAll(".accordionbtn");
+        const accordionbtnSiblings = simpleAccordion.querySelectorAll(".accordionbtn-sibling");
+
+        for(let i = 0; i<accordionBtns.length; i++){
+            accordionBtns[i].addEventListener("click", ()=>{
+            accordionbtnSiblings[i].classList.toggle("active");
+        })
+
+        }
+
+       
 
     </script>
   </body>
