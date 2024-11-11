@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <style>
-      div.accordionbtn{
+      div.accordionbtn {
         height: 50px;
         background-color: green;
         border: 2px solid red;
         border-radius: 10px;
       }
-      div.accordionbtn-sibling{
+      div.accordionbtn-sibling {
         height: 0px;
         border: 1px solid blue;
         border-radius: 10px;
@@ -22,7 +22,7 @@
         transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
       }
-      .accordionbtn-sibling.active{
+      .accordionbtn-sibling.active {
         height: 200px;
       }
     </style>
@@ -43,20 +43,50 @@
       </div>
     </div>
 
+    <div class="simple-accordion ms-5 mt-5">
+      <div class="accordionbtn col-4 text-bg-warning">simple1</div>
+      <div class="accordionbtn-sibling col-4">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam officia
+        quas iste sapiente saepe perferendis quam at fugit inventore, molestiae
+        dolores quasi incidunt omnis. Beatae vero veritatis dicta hic doloribus?
+      </div>
+      <div class="accordionbtn col-4 text-bg-warning">simple2</div>
+      <div class="accordionbtn-sibling col-4">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam officia
+        quas iste sapiente saepe perferendis quam at fugit inventore, molestiae
+        dolores quasi incidunt omnis. Beatae vero veritatis dicta hic doloribus?
+      </div>
+    </div>
+
     <script>
-        const simpleAccordion = document.querySelector(".simple-accordion");
-        const accordionBtns = simpleAccordion.querySelectorAll(".accordionbtn");
-        const accordionbtnSiblings = simpleAccordion.querySelectorAll(".accordionbtn-sibling");
+      
+        // const simpleAccordions = document.querySelectorAll(".simple-accordion");
+        // for(let i = 0; i<simpleAccordions.length; i++){
+        //     const accordionBtns = simpleAccordions[i].querySelectorAll(".accordionbtn");
+        //     const accordionContents = simpleAccordions[i].querySelectorAll(".accordionbtn-sibling");
 
-        for(let i = 0; i<accordionBtns.length; i++){
-            accordionBtns[i].addEventListener("click", ()=>{
-            accordionbtnSiblings[i].classList.toggle("active");
-        })
+        //     for(let j = 0; j<accordionBtns.length; j++){
+        //         accordionBtns[j].addEventListener("click", ()=>{
+        //             accordionContents[j].classList.toggle("active")
+        //         })
+        //     }
+        // }
 
-        }
+          const simpleAccordions = document.querySelectorAll(".simple-accordion");
+      
+        simpleAccordions.forEach((accordion) => {
+          const accordionBtns = accordion.querySelectorAll(".accordionbtn");
+          const accordionContents = accordion.querySelectorAll(".accordionbtn-sibling");
+      
+          accordionBtns.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+              accordionContents[index].classList.toggle("active");
+            });
+          });
+        });
 
-       
+    
 
-    </script>
+      </script>
   </body>
 </html>
